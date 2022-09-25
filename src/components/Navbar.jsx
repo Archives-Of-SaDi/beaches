@@ -19,7 +19,7 @@ function Navbar() {
   }
 
   return (
-    <div className="flex justify-between items-center h-28 px-4">
+    <div className="absolute top-0 w-full z-10 text-white flex justify-between items-center h-28 px-4">
       <div>
         <h1 className="uppercase text-3xl md:text-4xl font-bold">beaches.</h1>
       </div>
@@ -35,12 +35,16 @@ function Navbar() {
         <BsPerson className="mx-2" size={20} />
       </div>
       <div onClick={handleNav} className="md:hidden z-10">
-        {nav ? <AiOutlineClose size={20} /> : <HiOutlineMenuAlt4 size={20} />}
+        {nav ? (
+          <AiOutlineClose className="text-black" size={20} />
+        ) : (
+          <HiOutlineMenuAlt4 size={20} />
+        )}
       </div>
       <div
         className={`absolute ${
           nav ? 'left-[0]' : 'left-[-100%]'
-        } top-0 w-full bg-gray-100/90 px-4 py-7 flex flex-col`}
+        } top-0 w-full bg-gray-100/90 px-4 py-7 flex flex-col text-black`}
       >
         <ul>
           <h1 className="uppercase text-3xl md:text-4xl font-bold mt-2">
